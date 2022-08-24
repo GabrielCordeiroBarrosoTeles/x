@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper" style="background-color: black;">
+          <a href="#!" class="brand-logo"><img src="https://raw.githubusercontent.com/TodosJuntosJAA/site/main/img/cordeiro.png" alt=""></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+          </ul>
+        </div>
+      </nav>
+      <br>
+    <form action="index.php" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col s4">
+                    Nome:
+                    <input type="text" name="nome">
+                </div>
+                <div class="col s4">
+                    Sobrenome:
+                    <input type="text" name="sobrenome">
+                </div>
+                <div class="col s4">
+                    <button class="btn waves-effect  waves-light" type="submit">Enviar</button>
+                </div>
+            </div>   
+    </form>
+        <div class="row">
+            <?php
+               $nome = isset($_POST["nome"])?$_POST["nome"]:"não informado";
+               $sobrenome = isset($_POST["sobrenome"])?$_POST["sobrenome"]:"não informado";
+               echo '
+               <table>
+                    <thead>
+                        <tr>
+                            <td>Nome:</td>
+                            <td>Sobrenome:</td>
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>'.$nome.'</td>
+                            <td>'.$sobrenome.'</td>
+                        </tr> 
+                    </tbody>
+               </table>
+                     '
+            ?>
+        </div>
+    </div>
+</body>
+</html>
